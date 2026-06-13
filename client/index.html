@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная - Футбольный портал</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Футбольный портал</h1>
+        <div id="auth-section" class="auth-section"></div>
+      </header>
+
+      <!-- НАВИГАЦИОННОЕ МЕНЮ -->
+      <nav class="main-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">🏠 Главная</a></li>
+          <li><a href="news.html" class="nav-link">📰 Новости</a></li>
+          <li><a href="clubs.html" class="nav-link">⚽ Клубы</a></li>
+          <li id="adminNavItem" style="display: none">
+            <a href="admin.html" class="nav-link admin-link">⚙️ Админ-панель</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <h2>Добро пожаловать на футбольный портал!</h2>
+          <p>
+            Здесь вы можете найти информацию о игроках, клубах и многое другое.
+          </p>
+        </section>
+
+        <!-- БЛОК ПОПУЛЯРНЫХ КЛУБОВ -->
+        <section class="clubs-section">
+          <div class="section-header">
+            <h2>Популярные клубы</h2>
+            <a href="clubs.html" class="btn-view-all">Все клубы →</a>
+          </div>
+          <div id="popularClubsContainer" class="clubs-grid">
+            <div class="loading">Загрузка клубов...</div>
+          </div>
+        </section>
+
+        <!-- БЛОК НОВОСТЕЙ -->
+        <section class="news-section">
+          <div class="section-header">
+            <h2>Последние новости футбола</h2>
+            <a href="news.html" class="btn-view-all">Все новости →</a>
+          </div>
+
+          <div id="latestNewsContainer" class="latest-news-grid">
+            <div class="loading-news">Загрузка новостей...</div>
+          </div>
+        </section>
+
+        <!-- БЛОК ДЛЯ НЕАВТОРИЗОВАННЫХ -->
+        <section id="guestSection" style="display: block">
+          <div class="guest-content">
+            <h2>Присоединяйтесь к нам!</h2>
+            <p>
+              Создайте аккаунт, чтобы следить за любимыми клубами, общаться с
+              болельщиками и многое другое.
+            </p>
+            <div class="guest-buttons">
+              <a href="login.html" class="btn-large">Войти</a>
+              <a href="register.html" class="btn-large btn-register"
+                >Зарегистрироваться</a
+              >
+            </div>
+          </div>
+        </section>
+
+     <!-- ФУТЕР -->
+      <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Навигация</h3>
+            <li><a href="index.html" class="footer-link">🏠 Главная</a></li>
+            <li><a href="news.html" class="footer-link">📰 Новости</a></li>
+            <li><a href="clubs.html" class="footer-link">⚽ Клубы</a></li>
+          </div>
+          <div class="footer-section">
+            <h3>Помощь</h3>
+            <li>
+              <a href="support.html" class="footer-link"
+                >🆘 Техническая поддержка</a
+              >
+            </li>
+            <li><a href="faq.html" class="footer-link">❓ FAQ</a></li>
+            <li><a href="rules.html" class="footer-link">📋 Правила</a></li>
+            <li>
+              <a href="terms.html" class="footer-link"
+                >📄 Условия использования</a
+              >
+            </li>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <li>📧 support@football-portal.ru</li>
+            <li>📞 +7 (999) 123-45-67</li>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
