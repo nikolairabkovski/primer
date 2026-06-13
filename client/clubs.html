@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Футбольные клубы</title>
+    <link rel="stylesheet" href="css/clubs.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Футбольные клубы</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">Главная</a>
+          <a href="create-club.html" class="btn btn-create" id="createClubBtn"
+            >➕ Создать клуб</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <!-- Поиск клубов -->
+        <section class="search-section">
+          <h2>Поиск клубов</h2>
+          <div class="search-box">
+            <input
+              type="text"
+              id="clubSearch"
+              placeholder="Введите название или username клуба..."
+              autocomplete="off"
+            />
+            <div id="searchResults" class="search-results"></div>
+          </div>
+        </section>
+
+        <!-- Рекомендуемые клубы -->
+        <section class="recommended-section">
+          <h2>Рекомендуемые клубы</h2>
+          <div id="recommendedClubs" class="clubs-grid">
+            <div class="loading">Загрузка рекомендуемых клубов...</div>
+          </div>
+        </section>
+
+        <!-- Все клубы -->
+        <section class="all-clubs-section">
+          <h2>Все клубы</h2>
+          <div class="filters">
+            <select id="sortFilter">
+              <option value="popular">По популярности</option>
+              <option value="newest">Сначала новые</option>
+              <option value="oldest">Сначала старые</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+          <div id="allClubsContainer" class="clubs-grid">
+            <div class="loading">Загрузка клубов...</div>
+          </div>
+          <div id="pagination" class="pagination"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/clubs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создать клуб</title>
+    <link rel="stylesheet" href="css/create-club.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Создать футбольный клуб</h1>
+        <div class="header-actions">
+          <a href="clubs.html" class="btn">← Назад к клубам</a>
+        </div>
+      </header>
+
+      <main>
+        <div class="form-container">
+          <form
+            id="createClubForm"
+            class="club-form"
+            enctype="multipart/form-data"
+          >
+            <!-- Основная информация -->
+            <div class="form-section">
+              <h2>Основная информация</h2>
+
+              <div class="form-group">
+                <label for="name">
+                  Название клуба <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Например: FC Barcelona"
+                  maxlength="100"
+                />
+                <small>Максимум 100 символов</small>
+              </div>
+
+              <div class="form-group">
+                <label for="username">
+                  Username клуба <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  required
+                  placeholder="Например: barcelona_fc"
+                  pattern="[a-zA-Z0-9_]+"
+                  title="Только латинские буквы, цифры и подчеркивания"
+                  maxlength="50"
+                />
+                <small
+                  >Только латинские буквы, цифры и подчеркивания. Будет
+                  использоваться в ссылке: /club?club=username</small
+                >
+                <div id="username-status" class="input-status"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Описание</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                  placeholder="Расскажите о клубе, его истории, достижениях..."
+                  maxlength="1000"
+                ></textarea>
+                <small
+                  >Максимум 1000 символов. Осталось:
+                  <span id="description-counter">1000</span></small
+                >
+              </div>
+            </div>
+
+            <!-- Локация и стадион -->
+            <div class="form-section">
+              <h2>Локация и стадион</h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">Город</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Например: Барселона"
+                    maxlength="100"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="stadium">Стадион</label>
+                  <input
+                    type="text"
+                    id="stadium"
+                    name="stadium"
+                    placeholder="Например: Камп Ноу"
+                    maxlength="100"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Дополнительная информация -->
+            <div class="form-section">
+              <h2>Дополнительная информация</h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="founded_year">Год основания</label>
+                  <input
+                    type="number"
+                    id="founded_year"
+                    name="founded_year"
+                    placeholder="1899"
+                    min="1800"
+                    max="2024"
+                    step="1"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="website">Веб-сайт</label>
+                  <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    placeholder="https://www.example.com"
+                    pattern="https?://.+"
+                    title="Введите полный URL, начинающийся с http:// или https://"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Логотип -->
+            <div class="form-section">
+              <h2>Логотип клуба</h2>
+
+              <div class="form-group">
+                <label for="avatar">Загрузите логотип</label>
+                <div class="file-input-wrapper">
+                  <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/*"
+                  />
+                  <div class="file-input-placeholder" id="file-placeholder">
+                    <span class="file-icon">📷</span>
+                    <span class="file-text"
+                      >Выберите файл или перетащите его сюда</span
+                    >
+                    <span class="file-info">PNG, JPG, GIF до 5MB</span>
+                  </div>
+                </div>
+                <div
+                  id="file-preview"
+                  class="file-preview"
+                  style="display: none"
+                >
+                  <img id="preview-image" src="#" alt="Preview" />
+                  <button
+                    type="button"
+                    class="btn-remove-file"
+                    onclick="removeFile()"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <small
+                  >Рекомендуемый размер: 200x200px. Максимальный размер
+                  5MB.</small
+                >
+              </div>
+            </div>
+
+            <!-- Настройки доступа -->
+            <div class="form-section">
+              <h2>Настройки доступа</h2>
+
+              <div class="form-group checkbox">
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    id="is_private"
+                    name="is_private"
+                    value="true"
+                  />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">
+                    <strong>Закрытый клуб</strong>
+                    <small
+                      >Только по заявкам. Пользователи смогут вступить только
+                      после одобрения администрации.</small
+                    >
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Кнопки действий -->
+            <div class="form-actions">
+              <button type="submit" class="btn-submit" id="submit-btn">
+                <span class="btn-icon">⚽</span>
+                <span class="btn-text">Создать клуб</span>
+              </button>
+              <button
+                type="button"
+                class="btn-cancel"
+                onclick="window.location.href = 'clubs.html'"
+              >
+                Отмена
+              </button>
+            </div>
+          </form>
+
+          <!-- Информационная карточка -->
+          <div class="info-card">
+            <h3>📋 Правила создания клуба</h3>
+            <ul>
+              <li>Название клуба должно быть уникальным</li>
+              <li>Username будет использоваться в ссылке на клуб</li>
+              <li>Вы станете создателем и главным администратором клуба</li>
+              <li>
+                После создания вы сможете добавлять других администраторов
+              </li>
+              <li>Закрытые клубы требуют одобрения заявок на вступление</li>
+            </ul>
+
+            <div class="info-example">
+              <h4>Пример ссылки на клуб:</h4>
+              <code id="example-link">club.html?club=username</code>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/create-club.js"></script>
+  </body>
+</html>
