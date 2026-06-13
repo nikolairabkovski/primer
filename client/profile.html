@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Шапка профиля -->
+      <header class="profile-header">
+        <h1>⚽ Мой профиль</h1>
+        <div class="profile-actions">
+          <a href="edit-profile.html" class="btn btn-primary">
+            <span>✏️</span> Редактировать
+          </a>
+          <button onclick="logout()" class="btn btn-danger">
+            <span>🚪</span> Выйти
+          </button>
+        </div>
+      </header>
+
+      <!-- Основной контент -->
+      <div class="profile-content">
+        <!-- Боковая панель -->
+        <aside class="profile-sidebar">
+          <div class="profile-avatar" id="profileAvatar">👤</div>
+          <h2 class="profile-name" id="profileFullname">Загрузка...</h2>
+          <div class="profile-username" id="profileUsername">@username</div>
+
+          <div class="profile-stats">
+            <div class="stat-item">
+              <span class="stat-value" id="postsCount">0</span>
+              <span class="stat-label">Постов</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="friendsCount">0</span>
+              <span class="stat-label">Друзей</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="clubsCount">0</span>
+              <span class="stat-label">Клубов</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="rating">0</span>
+              <span class="stat-label">Рейтинг</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Основная информация -->
+        <main class="profile-main">
+          <!-- Личная информация -->
+          <section class="profile-section">
+            <h2>📋 Личная информация</h2>
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-label">👤 ФИО</div>
+                <div class="info-value" id="fullname">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">🔤 Username</div>
+                <div class="info-value" id="username">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">📧 Email</div>
+                <div class="info-value" id="email">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">📍 Город</div>
+                <div class="info-value" id="city">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">🎂 Дата рождения</div>
+                <div class="info-value" id="birthdate">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">⚽ Любимый клуб</div>
+                <div class="info-value" id="club">Загрузка...</div>
+              </div>
+              <div class="info-card">
+                <div class="info-label">👑 Роль</div>
+                <div class="info-value" id="role">Загрузка...</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- О себе -->
+          <section class="profile-section">
+            <h2>📝 О себе</h2>
+            <div class="bio-card" id="bio">Загрузка...</div>
+          </section>
+
+          <!-- Быстрые действия -->
+          <section class="profile-section">
+            <h2>⚡ Быстрые действия</h2>
+            <div class="quick-actions">
+              <a href="edit-profile.html" class="action-card">
+                <span class="action-icon">✏️</span>
+                <span class="action-text">Редактировать</span>
+              </a>
+              <a href="friends.html" class="action-card">
+                <span class="action-icon">👥</span>
+                <span class="action-text">Друзья</span>
+              </a>
+              <a href="clubs.html" class="action-card">
+                <span class="action-icon">⚽</span>
+                <span class="action-text">Клубы</span>
+              </a>
+              <a href="news.html" class="action-card">
+                <span class="action-icon">📰</span>
+                <span class="action-text">Новости</span>
+              </a>
+              <a href="create-news.html" class="action-card">
+                <span class="action-icon">➕</span>
+                <span class="action-text">Создать новость</span>
+              </a>
+              <a href="create-club.html" class="action-card">
+                <span class="action-icon">🏆</span>
+                <span class="action-text">Создать клуб</span>
+              </a>
+              <a href="support.html" class="action-card">
+                <span class="action-icon">🆘</span>
+                <span class="action-text">Поддержка</span>
+              </a>
+              <button
+                onclick="logout()"
+                class="action-card"
+                style="border: none; width: 100%; cursor: pointer"
+              >
+                <span class="action-icon">🚪</span>
+                <span class="action-text">Выйти</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Навигация -->
+          <section class="profile-section">
+            <h2>🔗 Навигация</h2>
+            <div class="nav-buttons">
+              <a href="index.html" class="nav-btn"> <span>🏠</span> Главная </a>
+              <a href="news.html" class="nav-btn"> <span>📰</span> Новости </a>
+              <a href="clubs.html" class="nav-btn"> <span>⚽</span> Клубы </a>
+              <a href="friends.html" class="nav-btn">
+                <span>👥</span> Друзья
+              </a>
+              <a href="support.html" class="nav-btn">
+                <span>🆘</span> Поддержка
+              </a>
+              <a href="faq.html" class="nav-btn"> <span>❓</span> FAQ </a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Модальное окно подтверждения выхода -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <h2>🚪 Выход</h2>
+        <p>Вы уверены, что хотите выйти?</p>
+        <div class="modal-actions">
+          <button onclick="confirmLogout()" class="modal-btn confirm">
+            Да, выйти
+          </button>
+          <button onclick="closeLogoutModal()" class="modal-btn cancel">
+            Отмена
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>

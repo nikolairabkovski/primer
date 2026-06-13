@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="css/edit-profile.css" />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Редактирование профиля</h2>
+
+      <form id="editForm">
+        <label>ФИО</label>
+        <input id="fullname" type="text" />
+
+        <label>Username</label>
+        <input id="username" type="text" />
+
+        <label>Email</label>
+        <input id="email" type="email" />
+
+        <label>Город</label>
+        <input id="city" type="text" />
+
+        <label>Дата рождения</label>
+        <input id="birthdate" type="date" />
+
+        <label>Любимый клуб</label>
+        <input id="club" type="text" />
+
+        <label>О себе</label>
+        <textarea id="bio"></textarea>
+
+        <button type="submit">Сохранить</button>
+      </form>
+
+      <br />
+
+      <a class="btn" href="profile.html">Назад</a>
+    </div>
+
+    <script src="js/edit-profile.js"></script>
+  </body>
+</html>
