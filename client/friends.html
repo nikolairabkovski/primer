@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мои друзья</title>
+    <link rel="stylesheet" href="css/friends.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Мои друзья</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">На главную</a>
+          <a href="profile.html" class="btn">Мой профиль</a>
+        </div>
+      </header>
+
+      <main>
+        <!-- Поиск пользователей -->
+        <section class="search-section">
+          <h2>Найти друзей</h2>
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Введите никнейм или имя пользователя..."
+              autocomplete="off"
+            />
+            <div id="searchResults" class="search-results"></div>
+          </div>
+        </section>
+
+        <!-- Вкладки -->
+        <div class="tabs">
+          <button class="tab-btn active" onclick="showTab('friends')">
+            Мои друзья
+          </button>
+          <button class="tab-btn" onclick="showTab('incoming')">
+            Входящие заявки
+            <span id="incomingCount" class="badge">0</span>
+          </button>
+          <button class="tab-btn" onclick="showTab('outgoing')">
+            Исходящие заявки
+            <span id="outgoingCount" class="badge">0</span>
+          </button>
+        </div>
+
+        <!-- Список друзей -->
+        <div id="friendsTab" class="tab-content active">
+          <h2>Мои друзья</h2>
+          <div id="friendsList" class="users-grid"></div>
+        </div>
+
+        <!-- Входящие заявки -->
+        <div id="incomingTab" class="tab-content">
+          <h2>Входящие заявки</h2>
+          <div id="incomingRequests" class="users-grid"></div>
+        </div>
+
+        <!-- Исходящие заявки -->
+        <div id="outgoingTab" class="tab-content">
+          <h2>Исходящие заявки</h2>
+          <div id="outgoingRequests" class="users-grid"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/friends.js"></script>
+  </body>
+</html>
