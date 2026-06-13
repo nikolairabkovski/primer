@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ-панель</title>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Админ-панель</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">На главную</a>
+        </div>
+      </header>
+
+      <main>
+        <div class="admin-tabs">
+          <button class="tab-btn active" onclick="showTab('users')">
+            👥 Пользователи
+          </button>
+          <button class="tab-btn" onclick="showTab('allnews')">
+            📰 Все новости
+          </button>
+          <button class="tab-btn" onclick="showTab('comments')">
+            💬 Комментарии
+          </button>
+          <button class="tab-btn" onclick="showTab('support')">
+            🆘 Техподдержка
+          </button>
+          <button class="tab-btn" onclick="showTab('clubs')">🏛️ Клубы</button>
+        </div>
+
+        <!-- Вкладка с пользователями -->
+        <div id="usersTab" class="tab-content active">
+          <h2>Управление пользователями</h2>
+          <div class="admin-controls">
+            <input
+              type="text"
+              id="userSearch"
+              placeholder="Поиск пользователей..."
+            />
+          </div>
+          <div id="usersList" class="users-list">
+            <div class="loading">Загрузка пользователей...</div>
+          </div>
+        </div>
+
+        <!-- Вкладка со всеми новостями -->
+        <div id="allnewsTab" class="tab-content">
+          <h2>Управление новостями</h2>
+          <div class="admin-controls">
+            <select id="newsStatusFilter" onchange="loadAllNews()">
+              <option value="all">Все новости</option>
+              <option value="pending">На модерации</option>
+              <option value="approved">Опубликованные</option>
+              <option value="rejected">Отклоненные</option>
+            </select>
+          </div>
+          <div id="allNewsList" class="news-list">
+            <div class="loading">Загрузка новостей...</div>
+          </div>
+        </div>
+
+        <!-- Вкладка с новостями на модерации -->
+        <div id="pendingnewsTab" class="tab-content">
+          <h2>Новости на модерации</h2>
+          <div id="pendingNewsList" class="news-list">
+            <div class="loading">Загрузка новостей...</div>
+          </div>
+        </div>
+
+        <!-- Вкладка с модерацией комментариев -->
+        <div id="commentsTab" class="tab-content">
+          <h2>Модерация комментариев</h2>
+          <div id="commentsList" class="comments-list-admin">
+            <div class="loading">Загрузка комментариев...</div>
+          </div>
+        </div>
+
+        <!-- Вкладка с техподдержкой -->
+        <div id="supportTab" class="tab-content">
+          <h2>Обращения в техподдержку</h2>
+          <div class="support-filters">
+            <select id="supportStatusFilter" onchange="loadSupportTickets()">
+              <option value="all">Все обращения</option>
+              <option value="open">Открытые</option>
+              <option value="in_progress">В работе</option>
+              <option value="closed">Закрытые</option>
+            </select>
+          </div>
+          <div id="supportTickets" class="support-tickets">
+            <div class="loading">Загрузка обращений...</div>
+          </div>
+        </div>
+
+        <!-- Вкладка с клубами (перенесена внутрь main) -->
+        <div id="clubsTab" class="tab-content">
+          <h2>Управление клубами</h2>
+          <div class="admin-controls">
+            <input
+              type="text"
+              id="clubSearch"
+              placeholder="Поиск клуба..."
+              onkeyup="filterClubs()"
+            />
+          </div>
+          <div id="clubsList" class="clubs-list-admin">
+            <div class="loading">Загрузка клубов...</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Модальное окно для редактирования пользователя -->
+    <div id="userModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUserModal()">&times;</span>
+        <h2>Редактирование пользователя</h2>
+        <div id="userEditForm"></div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для просмотра обращения -->
+    <div id="ticketModal" class="modal">
+      <div class="modal-content ticket-modal">
+        <span class="close" onclick="closeTicketModal()">&times;</span>
+        <div id="ticketDetails"></div>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>
