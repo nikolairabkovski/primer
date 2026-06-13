@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Регистрация</h2>
+
+      <form onsubmit="register(event)">
+        <label>ФИО</label>
+        <input id="fullname" type="text" placeholder="Введите ФИО" required />
+
+        <label>Ник на сайте</label>
+        <input id="nickname" type="text" placeholder="Введите ник" required />
+
+        <label>Юзернейм</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Введите username"
+          required
+        />
+
+        <label>Почта</label>
+        <input id="email" type="email" placeholder="Введите email" required />
+
+        <label>Пароль</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Введите пароль"
+          required
+        />
+
+        <label>Подтверждение пароля</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Повторите пароль"
+          required
+        />
+
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+
+      <p class="switch">
+        Уже есть аккаунт?
+        <a href="login.html">Войти</a>
+      </p>
+
+      <p class="switch">
+        <a href="index.html">На главную</a>
+      </p>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
