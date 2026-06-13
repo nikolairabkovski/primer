@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новость</title>
+    <link rel="stylesheet" href="css/news-detail.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="news.html" class="btn">← Назад к новостям</a>
+      </header>
+
+      <main>
+        <article id="newsDetail" class="news-detail">
+          <div class="loading">Загрузка новости...</div>
+        </article>
+
+        <section class="comments-section">
+          <h3>Комментарии <span id="commentsCount">0</span></h3>
+
+          <div id="commentForm" class="comment-form">
+            <textarea
+              id="commentContent"
+              placeholder="Напишите комментарий..."
+              rows="3"
+            ></textarea>
+            <button onclick="addComment()" class="btn-submit">Отправить</button>
+          </div>
+
+          <div id="commentsContainer" class="comments-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/news-detail.js"></script>
+  </body>
+</html>

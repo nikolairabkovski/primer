@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новости футбола</title>
+    <link rel="stylesheet" href="css/news.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Новости футбола</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">Главная</a>
+          <a href="create-news.html" class="btn btn-create"
+            >➕ Создать новость</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <!-- Поиск и фильтры -->
+        <div class="news-search-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="🔍 Поиск новостей..."
+              onkeyup="handleSearch(event)"
+            />
+          </div>
+
+          <div class="filters-row">
+            <div class="filter-group">
+              <label>Категория:</label>
+              <select id="categoryFilter" onchange="applyFilters()">
+                <option value="">Все категории</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Автор:</label>
+              <select id="authorFilter" onchange="applyFilters()">
+                <option value="">Все авторы</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Сортировка:</label>
+              <select id="sortFilter" onchange="applyFilters()">
+                <option value="newest">Сначала новые</option>
+                <option value="oldest">Сначала старые</option>
+                <option value="popular">По популярности</option>
+                <option value="most_commented">По комментариям</option>
+                <option value="most_liked">По лайкам</option>
+                <option value="most_disliked">По дизлайкам</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Популярные хэштеги -->
+          <div class="hashtags-cloud" id="hashtagsCloud">
+            <span class="hashtags-label">Популярные темы:</span>
+            <div class="hashtags-list"></div>
+          </div>
+        </div>
+
+        <!-- Вкладки статуса -->
+        <div class="news-filters">
+          <button class="filter-btn active" onclick="loadNews('approved')">
+            Опубликованные
+          </button>
+          <button
+            class="filter-btn"
+            id="likedNewsBtn"
+            onclick="loadNews('liked')"
+            style="display: none"
+          >
+            👍 Мои лайки
+          </button>
+          <button
+            class="filter-btn"
+            id="dislikedNewsBtn"
+            onclick="loadNews('disliked')"
+            style="display: none"
+          >
+            👎 Мои дизлайки
+          </button>
+        </div>
+
+        <!-- Сетка новостей -->
+        <div id="newsContainer" class="news-grid">
+          <div class="loading">Загрузка новостей...</div>
+        </div>
+
+        <!-- Пагинация -->
+        <div class="pagination" id="pagination"></div>
+      </main>
+    </div>
+
+    <script src="js/news.js"></script>
+  </body>
+</html>
