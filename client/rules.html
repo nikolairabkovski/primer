@@ -1,0 +1,603 @@
+<!-- rules.html -->
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Правила портала</title>
+    <!-- Bootstrap CSS для дополнительных компонентов -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome для иконок -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS для анимаций -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/rules.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Шапка -->
+      <header data-aos="fade-down">
+        <h1><i class="fas fa-gavel"></i> Правила портала</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">
+            <i class="fas fa-home"></i> На главную
+          </a>
+          <a href="faq.html" class="btn-faq">
+            <i class="fas fa-question-circle"></i> FAQ
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <!-- Краткое введение -->
+        <section class="rules-intro" data-aos="fade-up">
+          <div class="intro-content">
+            <i class="fas fa-scroll"></i>
+            <h2>Добро пожаловать в сообщество!</h2>
+            <p>
+              Чтобы поддерживать дружелюбную и безопасную атмосферу, мы просим
+              всех пользователей соблюдать следующие правила. Нарушение правил
+              может привести к ограничениям или блокировке аккаунта.
+            </p>
+            <div class="last-updated">
+              <i class="fas fa-calendar-alt"></i> Последнее обновление: 19 марта
+              2026 г.
+            </div>
+          </div>
+        </section>
+
+        <!-- Прогресс чтения правил -->
+        <div class="rules-progress" data-aos="fade-up">
+          <div class="progress-bar-container">
+            <div class="progress-text">
+              <i class="fas fa-book-open"></i> Ваш прогресс чтения
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                id="readingProgress"
+                role="progressbar"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Навигация по правилам -->
+        <section class="rules-nav" data-aos="fade-up" data-aos-delay="100">
+          <div class="nav-wrapper">
+            <button class="nav-btn active" onclick="scrollToSection('general')">
+              <i class="fas fa-globe"></i> Общие положения
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('conduct')">
+              <i class="fas fa-handshake"></i> Поведение
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('content')">
+              <i class="fas fa-file-alt"></i> Контент
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('clubs')">
+              <i class="fas fa-futbol"></i> Клубы
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('comments')">
+              <i class="fas fa-comments"></i> Комментарии
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('penalties')">
+              <i class="fas fa-exclamation-triangle"></i> Нарушения
+            </button>
+          </div>
+        </section>
+
+        <!-- Основные правила -->
+        <section class="rules-list">
+          <!-- Общие положения -->
+          <div id="general" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-globe"></i> 1. Общие положения</h2>
+              <span class="section-badge">Основное</span>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>1.1. Принятие правил</h3>
+                  <p>
+                    Регистрируясь на портале, вы автоматически соглашаетесь с
+                    данными правилами и обязуетесь их соблюдать.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>1.2. Изменение правил</h3>
+                  <p>
+                    Администрация имеет право изменять правила в любое время. О
+                    важных изменениях мы будем уведомлять пользователей.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>1.3. Применение правил</h3>
+                  <p>
+                    Правила применяются ко всем пользователям независимо от
+                    статуса, роли или срока регистрации.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-language"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>1.4. Язык общения</h3>
+                  <p>
+                    Основной язык портала - русский. В публичных разделах
+                    рекомендуется использовать русский язык для комфорта всех
+                    участников.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правила поведения -->
+          <div id="conduct" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-handshake"></i> 2. Правила поведения</h2>
+              <span class="section-badge">Важно</span>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card warning">
+                <div class="rule-icon">
+                  <i class="fas fa-ban"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>2.1. Запрещено</h3>
+                  <ul>
+                    <li>
+                      <i class="fas fa-times"></i> Оскорбления и унижения других
+                      пользователей
+                    </li>
+                    <li>
+                      <i class="fas fa-times"></i> Травля (буллинг) и
+                      преследование
+                    </li>
+                    <li>
+                      <i class="fas fa-times"></i> Разжигание межнациональной
+                      розни
+                    </li>
+                    <li>
+                      <i class="fas fa-times"></i> Политические провокации
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card success">
+                <div class="rule-icon">
+                  <i class="fas fa-thumbs-up"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>2.2. Рекомендуется</h3>
+                  <ul>
+                    <li><i class="fas fa-check"></i> Уважительное общение</li>
+                    <li><i class="fas fa-check"></i> Конструктивная критика</li>
+                    <li><i class="fas fa-check"></i> Помощь новичкам</li>
+                    <li>
+                      <i class="fas fa-check"></i> Поддержание дружелюбной
+                      атмосферы
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>2.3. Конфиденциальность</h3>
+                  <p>
+                    Запрещено публиковать личную информацию других пользователей
+                    без их согласия (адреса, телефоны, паспортные данные и
+                    т.д.).
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>2.4. Боты и автоматизация</h3>
+                  <p>
+                    Запрещено использование ботов, скриптов и других средств
+                    автоматизации для накрутки лайков, подписчиков или рассылки
+                    спама.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правила контента -->
+          <div id="content" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-file-alt"></i> 3. Правила контента</h2>
+              <span class="section-badge">Контент</span>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>3.1. Новости</h3>
+                  <ul>
+                    <li>Новости должны быть связаны с футболом</li>
+                    <li>
+                      Заголовки должны соответствовать содержанию (без
+                      кликбейта)
+                    </li>
+                    <li>Указывайте источники информации</li>
+                    <li>Не публикуйте фейковые новости</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-copyright"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>3.2. Авторские права</h3>
+                  <p>
+                    Запрещено публиковать контент, нарушающий авторские права.
+                    При использовании чужих материалов указывайте источник.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card warning">
+                <div class="rule-icon">
+                  <i class="fas fa-skull-crossbones"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>3.3. Запрещенный контент</h3>
+                  <ul>
+                    <li>
+                      <i class="fas fa-times"></i> Порнография и контент 18+
+                    </li>
+                    <li><i class="fas fa-times"></i> Пропаганда насилия</li>
+                    <li><i class="fas fa-times"></i> Наркотические вещества</li>
+                    <li>
+                      <i class="fas fa-times"></i> Экстремистские материалы
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-hashtag"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>3.4. Хэштеги</h3>
+                  <p>
+                    Используйте релевантные хэштеги. Не злоупотребляйте
+                    количеством хэштегов (максимум 5-7 на пост).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правила клубов -->
+          <div id="clubs" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-futbol"></i> 4. Правила клубов</h2>
+              <span class="section-badge">Сообщества</span>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>4.1. Создание клубов</h3>
+                  <ul>
+                    <li>Клуб должен быть связан с футболом</li>
+                    <li>
+                      Запрещено создавать клубы с оскорбительными названиями
+                    </li>
+                    <li>Не создавайте дублирующиеся клубы</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>4.2. Администрация клубов</h3>
+                  <p>
+                    Администраторы клубов несут ответственность за контент в
+                    своем клубе и обязаны модерировать посты и комментарии.
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>4.3. Закрытые клубы</h3>
+                  <p>
+                    Администраторы закрытых клубов должны рассматривать заявки в
+                    течение разумного срока (не более 7 дней).
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-ban"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>4.4. Неактивные клубы</h3>
+                  <p>
+                    Клубы без активности более 6 месяцев могут быть удалены
+                    администрацией портала.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правила комментариев -->
+          <div id="comments" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-comments"></i> 5. Правила комментариев</h2>
+              <span class="section-badge">Общение</span>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-comment-dots"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>5.1. Общие правила</h3>
+                  <ul>
+                    <li>Комментарии должны относиться к теме поста</li>
+                    <li>Запрещен спам и флуд</li>
+                    <li>Не пишите капслоком (ЗАГЛАВНЫМИ БУКВАМИ)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card warning">
+                <div class="rule-icon">
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>5.2. Запрещено в комментариях</h3>
+                  <ul>
+                    <li><i class="fas fa-times"></i> Оскорбления авторов</li>
+                    <li><i class="fas fa-times"></i> Разжигание конфликтов</li>
+                    <li><i class="fas fa-times"></i> Реклама и спам</li>
+                    <li><i class="fas fa-times"></i> Переход на личности</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-flag"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>5.3. Жалобы</h3>
+                  <p>
+                    Если вы видите нарушающий правила комментарий, сообщите о
+                    нём с помощью кнопки "Пожаловаться".
+                  </p>
+                </div>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-icon">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="rule-content">
+                  <h3>5.4. Удаление комментариев</h3>
+                  <p>
+                    Администрация имеет право удалять комментарии, нарушающие
+                    правила, без предупреждения.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Нарушения и наказания -->
+          <div id="penalties" class="rules-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2>
+                <i class="fas fa-exclamation-triangle"></i> 6. Нарушения и
+                наказания
+              </h2>
+              <span class="section-badge">Санкции</span>
+            </div>
+
+            <div class="penalties-table">
+              <div class="penalty-card" data-aos="fade-right">
+                <div class="penalty-level level-1">
+                  <span class="level-badge">Уровень 1</span>
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="penalty-content">
+                  <h4>Незначительные нарушения</h4>
+                  <ul>
+                    <li>Мелкий спам</li>
+                    <li>Неуместные комментарии</li>
+                    <li>Незначительные оскорбления</li>
+                  </ul>
+                  <div class="penalty-action">
+                    <span class="action-badge warning">Предупреждение</span>
+                    <span class="action-badge">Бан на 1-3 дня</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="penalty-card"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                <div class="penalty-level level-2">
+                  <span class="level-badge">Уровень 2</span>
+                  <i class="fas fa-exclamation"></i>
+                </div>
+                <div class="penalty-content">
+                  <h4>Серьезные нарушения</h4>
+                  <ul>
+                    <li>Систематические оскорбления</li>
+                    <li>Публикация фейковых новостей</li>
+                    <li>Нарушение авторских прав</li>
+                  </ul>
+                  <div class="penalty-action">
+                    <span class="action-badge danger">Бан на 7-30 дней</span>
+                    <span class="action-badge">Ограничение функций</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="penalty-card"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <div class="penalty-level level-3">
+                  <span class="level-badge">Уровень 3</span>
+                  <i class="fas fa-skull-crossbones"></i>
+                </div>
+                <div class="penalty-content">
+                  <h4>Критические нарушения</h4>
+                  <ul>
+                    <li>Противоправный контент</li>
+                    <li>Угрозы и экстремизм</li>
+                    <li>Создание нескольких аккаунтов для обхода бана</li>
+                  </ul>
+                  <div class="penalty-action">
+                    <span class="action-badge permanent">Перманентный бан</span>
+                    <span class="action-badge danger">Блокировка IP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="note-card" data-aos="fade-up">
+              <i class="fas fa-lightbulb"></i>
+              <div class="note-content">
+                <h4>Важное примечание</h4>
+                <p>
+                  Администрация оставляет за собой право применять наказания, не
+                  описанные в данном разделе, в зависимости от тяжести
+                  нарушения. Решения администрации являются окончательными и
+                  обжалованию не подлежат, за исключением случаев технических
+                  ошибок.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Согласие с правилами -->
+          <section class="rules-agreement" data-aos="fade-up">
+            <div class="agreement-box">
+              <i class="fas fa-check-circle"></i>
+              <h3>Я ознакомился и согласен с правилами</h3>
+              <p>
+                Продолжая использовать портал, вы подтверждаете, что прочитали и
+                принимаете все вышеуказанные правила.
+              </p>
+              <div class="agreement-actions">
+                <button class="btn-agree" onclick="acceptRules()">
+                  <i class="fas fa-check"></i> Принимаю правила
+                </button>
+                <a href="index.html" class="btn-disagree">
+                  <i class="fas fa-times"></i> Вернуться на главную
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Кнопка "Наверх" -->
+        <button id="scrollTop" class="scroll-top" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </main>
+
+      <!-- ФУТЕР -->
+      <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Навигация</h3>
+            <li><a href="index.html" class="footer-link">🏠 Главная</a></li>
+            <li><a href="news.html" class="footer-link">📰 Новости</a></li>
+            <li><a href="clubs.html" class="footer-link">⚽ Клубы</a></li>
+          </div>
+          <div class="footer-section">
+            <h3>Помощь</h3>
+            <li>
+              <a href="support.html" class="footer-link"
+                >🆘 Техническая поддержка</a
+              >
+            </li>
+            <li><a href="faq.html" class="footer-link">❓ FAQ</a></li>
+            <li><a href="rules.html" class="footer-link">📋 Правила</a></li>
+            <li>
+              <a href="terms.html" class="footer-link"
+                >📄 Условия использования</a
+              >
+            </li>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <li>📧 support@football-portal.ru</li>
+            <li>📞 +7 (999) 123-45-67</li>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/rules.js"></script>
+  </body>
+</html>

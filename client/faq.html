@@ -1,0 +1,636 @@
+<!-- faq.html -->
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Часто задаваемые вопросы</title>
+    <!-- Bootstrap CSS для дополнительных компонентов -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome для иконок -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS для анимаций -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/faq.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Шапка -->
+      <header data-aos="fade-down">
+        <h1><i class="fas fa-question-circle"></i> Часто задаваемые вопросы</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">
+            <i class="fas fa-home"></i> На главную
+          </a>
+          <a href="support.html" class="btn-support">
+            <i class="fas fa-headset"></i> Техподдержка
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <!-- Поиск по FAQ -->
+        <section class="faq-search-section" data-aos="fade-up">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              id="faqSearch"
+              placeholder="🔍 Поиск по вопросам..."
+              class="faq-search"
+            />
+          </div>
+          <div class="search-stats">
+            <span class="stat-badge">
+              <i class="fas fa-question"></i> Всего вопросов:
+              <span id="totalQuestions">24</span>
+            </span>
+          </div>
+        </section>
+
+        <!-- Категории FAQ -->
+        <section class="faq-categories" data-aos="fade-up" data-aos-delay="100">
+          <div class="categories-wrapper">
+            <button
+              class="category-btn active"
+              onclick="filterByCategory('all')"
+            >
+              <i class="fas fa-globe"></i> Все вопросы
+            </button>
+            <button class="category-btn" onclick="filterByCategory('general')">
+              <i class="fas fa-info-circle"></i> Общие вопросы
+            </button>
+            <button class="category-btn" onclick="filterByCategory('account')">
+              <i class="fas fa-user-circle"></i> Аккаунт
+            </button>
+            <button class="category-btn" onclick="filterByCategory('clubs')">
+              <i class="fas fa-futbol"></i> Клубы
+            </button>
+            <button class="category-btn" onclick="filterByCategory('news')">
+              <i class="fas fa-newspaper"></i> Новости
+            </button>
+            <button class="category-btn" onclick="filterByCategory('support')">
+              <i class="fas fa-headset"></i> Техподдержка
+            </button>
+          </div>
+        </section>
+
+        <!-- Список вопросов -->
+        <section class="faq-list" data-aos="fade-up" data-aos-delay="200">
+          <!-- Общие вопросы -->
+          <div class="faq-category-section" id="general">
+            <h3><i class="fas fa-info-circle"></i> Общие вопросы</h3>
+            <div class="faq-items">
+              <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">❓</span>
+                    <span class="question-text"
+                      >Что такое Футбольный портал?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Футбольный портал - это социальная сеть для футбольных
+                    болельщиков. Здесь вы можете:
+                  </p>
+                  <ul>
+                    <li>Следить за новостями футбола</li>
+                    <li>Создавать и вступать в фан-клубы</li>
+                    <li>Общаться с единомышленниками</li>
+                    <li>Делиться мнениями и обсуждать матчи</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">💰</span>
+                    <span class="question-text"
+                      >Сколько стоит использование портала?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Футбольный портал полностью бесплатен для всех
+                    пользователей! Все основные функции доступны без какой-либо
+                    оплаты. В будущем мы планируем добавить премиум-функции, но
+                    базовая функциональность всегда останется бесплатной.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🌍</span>
+                    <span class="question-text"
+                      >Доступен ли портал на других языках?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    В настоящее время портал доступен только на русском языке. В
+                    будущем мы планируем добавить поддержку английского и других
+                    языков.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Аккаунт -->
+          <div class="faq-category-section" id="account">
+            <h3><i class="fas fa-user-circle"></i> Аккаунт</h3>
+            <div class="faq-items">
+              <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">📝</span>
+                    <span class="question-text"
+                      >Как зарегистрироваться на портале?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Для регистрации выполните следующие шаги:</p>
+                  <ol>
+                    <li>Нажмите кнопку "Регистрация" в правом верхнем углу</li>
+                    <li>
+                      Заполните все обязательные поля (ФИО, никнейм, email,
+                      пароль)
+                    </li>
+                    <li>Подтвердите пароль</li>
+                    <li>Нажмите "Зарегистрироваться"</li>
+                  </ol>
+                  <p>
+                    После регистрации вы сможете войти в свой аккаунт и начать
+                    пользоваться всеми функциями портала.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🔑</span>
+                    <span class="question-text">Как восстановить пароль?</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Если вы забыли пароль:</p>
+                  <ol>
+                    <li>На странице входа нажмите "Забыли пароль?"</li>
+                    <li>Введите email, указанный при регистрации</li>
+                    <li>
+                      На ваш email придет письмо с инструкциями по сбросу пароля
+                    </li>
+                    <li>
+                      Перейдите по ссылке в письме и создайте новый пароль
+                    </li>
+                  </ol>
+                  <p class="note">
+                    Письмо может прийти в течение нескольких минут. Проверьте
+                    папку "Спам".
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">✏️</span>
+                    <span class="question-text"
+                      >Как изменить данные профиля?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Чтобы изменить данные профиля:</p>
+                  <ol>
+                    <li>Войдите в свой аккаунт</li>
+                    <li>Перейдите в "Мой профиль"</li>
+                    <li>Нажмите кнопку "Редактировать профиль"</li>
+                    <li>Внесите необходимые изменения</li>
+                    <li>Нажмите "Сохранить"</li>
+                  </ol>
+                  <p>
+                    Вы можете изменить ФИО, город, дату рождения, любимый клуб и
+                    информацию о себе.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">👥</span>
+                    <span class="question-text"
+                      >Как добавить пользователя в друзья?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Чтобы добавить пользователя в друзья:</p>
+                  <ol>
+                    <li>Перейдите на страницу пользователя</li>
+                    <li>Нажмите кнопку "Добавить в друзья"</li>
+                    <li>Дождитесь, пока пользователь примет вашу заявку</li>
+                  </ol>
+                  <p>
+                    Вы также можете найти друзей через поиск на странице "Мои
+                    друзья".
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Клубы -->
+          <div class="faq-category-section" id="clubs">
+            <h3><i class="fas fa-futbol"></i> Клубы</h3>
+            <div class="faq-items">
+              <div class="faq-item" data-category="clubs">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🏆</span>
+                    <span class="question-text">Как создать свой клуб?</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Для создания клуба:</p>
+                  <ol>
+                    <li>Перейдите на страницу "Клубы"</li>
+                    <li>Нажмите кнопку "Создать клуб"</li>
+                    <li>
+                      Заполните информацию о клубе:
+                      <ul>
+                        <li>Название клуба (обязательно)</li>
+                        <li>Username для ссылки (обязательно)</li>
+                        <li>Описание клуба</li>
+                        <li>Город и стадион</li>
+                        <li>Год основания</li>
+                        <li>Загрузите логотип</li>
+                      </ul>
+                    </li>
+                    <li>Нажмите "Создать клуб"</li>
+                  </ol>
+                  <p>Вы станете создателем клуба с правами администратора.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="clubs">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🔒</span>
+                    <span class="question-text">Что такое закрытый клуб?</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Закрытый клуб - это клуб, вступление в который требует
+                    одобрения администрации. В отличие от открытых клубов, где
+                    можно вступить сразу:
+                  </p>
+                  <ul>
+                    <li>Пользователи отправляют заявку на вступление</li>
+                    <li>Администраторы клуба рассматривают заявку</li>
+                    <li>
+                      После одобрения пользователь становится членом клуба
+                    </li>
+                  </ul>
+                  <p>Это удобно для создания закрытых сообществ болельщиков.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="clubs">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">📝</span>
+                    <span class="question-text"
+                      >Как предложить пост в клуб?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Если вы подписаны на клуб, но не являетесь администратором
+                    или модератором:
+                  </p>
+                  <ol>
+                    <li>На странице клуба найдите раздел "Предложить пост"</li>
+                    <li>Напишите текст поста</li>
+                    <li>При желании прикрепите изображение</li>
+                    <li>Нажмите "Отправить на модерацию"</li>
+                  </ol>
+                  <p>
+                    После модерации администраторами ваш пост появится в ленте
+                    клуба.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="clubs">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">👑</span>
+                    <span class="question-text"
+                      >Какие права у администраторов клуба?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Администраторы клуба имеют следующие права:</p>
+                  <ul>
+                    <li>Создание и редактирование постов</li>
+                    <li>Управление подписчиками (изменение ролей, бан)</li>
+                    <li>Модерация предложенных постов</li>
+                    <li>Редактирование информации о клубе</li>
+                    <li>Закрепление важных постов</li>
+                    <li>Удаление комментариев</li>
+                  </ul>
+                  <p>
+                    Создатель клуба имеет все права и может назначать других
+                    администраторов.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Новости -->
+          <div class="faq-category-section" id="news">
+            <h3><i class="fas fa-newspaper"></i> Новости</h3>
+            <div class="faq-items">
+              <div class="faq-item" data-category="news">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">📰</span>
+                    <span class="question-text">Как создать новость?</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Для создания новости:</p>
+                  <ol>
+                    <li>Перейдите на страницу "Новости"</li>
+                    <li>Нажмите кнопку "Создать новость"</li>
+                    <li>
+                      Заполните форму:
+                      <ul>
+                        <li>Заголовок новости</li>
+                        <li>Категория</li>
+                        <li>Хэштеги (через запятую)</li>
+                        <li>Текст новости</li>
+                        <li>Изображение (опционально)</li>
+                      </ul>
+                    </li>
+                    <li>Нажмите "Отправить на модерацию"</li>
+                  </ol>
+                  <p>Новость будет проверена модераторами и опубликована.</p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="news">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">⏳</span>
+                    <span class="question-text"
+                      >Сколько длится модерация новости?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Обычно модерация занимает от нескольких минут до нескольких
+                    часов. В редких случаях может занять до 24 часов. Вы можете
+                    отслеживать статус вашей новости на странице "Новости" во
+                    вкладке "На модерации".
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="news">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🏷️</span>
+                    <span class="question-text">Для чего нужны хэштеги?</span>
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Хэштеги помогают:</p>
+                  <ul>
+                    <li>Категоризировать новости по темам</li>
+                    <li>Упростить поиск похожих новостей</li>
+                    <li>Повысить видимость вашей новости</li>
+                  </ul>
+                  <p>
+                    При клике на хэштег вы увидите все новости с таким же тегом.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Техподдержка -->
+          <div class="faq-category-section" id="support">
+            <h3><i class="fas fa-headset"></i> Техподдержка</h3>
+            <div class="faq-items">
+              <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">🆘</span>
+                    <span class="question-text"
+                      >Как связаться с техподдержкой?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Вы можете связаться с техподдержкой несколькими способами:
+                  </p>
+                  <ul>
+                    <li>
+                      Создать обращение на странице
+                      <a href="support.html">Техподдержка</a>
+                    </li>
+                    <li>
+                      Написать на email:
+                      <a href="mailto:support@football-portal.ru"
+                        >support@football-portal.ru</a
+                      >
+                    </li>
+                    <li>Позвонить по телефону: +7 (999) 123-45-67</li>
+                  </ul>
+                  <p>
+                    Мы стараемся отвечать на все обращения в течение 24 часов.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">📸</span>
+                    <span class="question-text"
+                      >Можно ли прикреплять фото к обращению?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Да, при создании обращения вы можете прикрепить до 5
+                    фотографий. Это особенно полезно, если нужно показать
+                    скриншот ошибки или другой визуальный материал. Максимальный
+                    размер каждого файла - 5MB.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item" data-category="support">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                  <div class="question-content">
+                    <span class="question-icon">📊</span>
+                    <span class="question-text"
+                      >Какие статусы у обращений?</span
+                    >
+                  </div>
+                  <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="faq-answer">
+                  <p>Обращения в техподдержку могут иметь следующие статусы:</p>
+                  <ul>
+                    <li>
+                      <span class="status-badge status-open">Открыто</span> -
+                      обращение создано, ожидает рассмотрения
+                    </li>
+                    <li>
+                      <span class="status-badge status-progress">В работе</span>
+                      - специалист уже занимается вашим вопросом
+                    </li>
+                    <li>
+                      <span class="status-badge status-closed">Закрыто</span> -
+                      вопрос решен или обращение закрыто
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Баннер с предложением задать вопрос -->
+        <section
+          class="ask-question-banner"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="banner-content">
+            <h3>
+              <i class="fas fa-question-circle"></i> Не нашли ответ на свой
+              вопрос?
+            </h3>
+            <p>Напишите нам в техподдержку, и мы поможем вам!</p>
+            <div class="banner-actions">
+              <a href="support.html" class="btn-primary">
+                <i class="fas fa-headset"></i> Создать обращение
+              </a>
+              <a href="mailto:support@football-portal.ru" class="btn-secondary">
+                <i class="fas fa-envelope"></i> Написать на email
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Полезные ссылки -->
+        <section class="useful-links" data-aos="fade-up" data-aos-delay="400">
+          <h3><i class="fas fa-link"></i> Полезные ссылки</h3>
+          <div class="links-grid">
+            <a href="rules.html" class="link-card">
+              <i class="fas fa-gavel"></i>
+              <span>Правила портала</span>
+            </a>
+            <a href="privacy.html" class="link-card">
+              <i class="fas fa-shield-alt"></i>
+              <span>Политика конфиденциальности</span>
+            </a>
+            <a href="terms.html" class="link-card">
+              <i class="fas fa-file-contract"></i>
+              <span>Условия использования</span>
+            </a>
+            <a href="support.html" class="link-card">
+              <i class="fas fa-headset"></i>
+              <span>Техподдержка</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- ФУТЕР -->
+       <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Навигация</h3>
+            <ul>
+              <li><a href="index.html">🏠 Главная</a></li>
+              <li><a href="news.html">📰 Новости</a></li>
+              <li><a href="clubs.html">⚽ Клубы</a></li>
+              <li><a href="faq.html">❓ FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Правовая информация</h3>
+            <ul>
+              </li>
+            <li><a href="privacy.html">🔒 Политика конфиденциальности</a></li>
+            <li><a href="rules.html" class="footer-link">📋 Правила</a></li>
+            <li>
+              <a href="terms.html" class="footer-link"
+                >📄 Условия использования</a
+              >
+            </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <ul>
+              <li>📧 support@football-portal.ru</li>
+              <li>📞 +7 (999) 123-45-67</li>
+              <li>📍 Москва, Россия</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/faq.js"></script>
+  </body>
+</html>

@@ -1,0 +1,668 @@
+<!-- terms.html -->
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Условия использования</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- AOS для анимаций -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/terms.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Шапка -->
+      <header data-aos="fade-down">
+        <h1><i class="fas fa-file-contract"></i> Условия использования</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">
+            <i class="fas fa-home"></i> На главную
+          </a>
+          <a href="rules.html" class="btn-rules">
+            <i class="fas fa-gavel"></i> Правила
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <!-- Краткое введение -->
+        <section class="terms-intro" data-aos="fade-up">
+          <div class="intro-content">
+            <i class="fas fa-handshake"></i>
+            <h2>Добро пожаловать на Футбольный портал!</h2>
+            <p>
+              Настоящие Условия использования (далее — «Условия») регулируют
+              отношения между администрацией портала (далее — «Администрация») и
+              пользователем (далее — «Вы» или «Пользователь»). Используя портал,
+              Вы соглашаетесь с данными Условиями.
+            </p>
+            <div class="last-updated">
+              <i class="fas fa-calendar-alt"></i> Последнее обновление: 19 марта
+              2026 г.
+            </div>
+          </div>
+        </section>
+
+        <!-- Прогресс чтения -->
+        <div class="terms-progress" data-aos="fade-up">
+          <div class="progress-bar-container">
+            <div class="progress-text">
+              <i class="fas fa-book-open"></i> Прогресс ознакомления
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                id="readingProgress"
+                role="progressbar"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Навигация по разделам -->
+        <section class="terms-nav" data-aos="fade-up" data-aos-delay="100">
+          <div class="nav-wrapper">
+            <button class="nav-btn active" onclick="scrollToSection('general')">
+              <i class="fas fa-globe"></i> Общие положения
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('account')">
+              <i class="fas fa-user-circle"></i> Аккаунт
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('content')">
+              <i class="fas fa-file-alt"></i> Контент
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('rights')">
+              <i class="fas fa-copyright"></i> Права и обязанности
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('liability')">
+              <i class="fas fa-balance-scale"></i> Ответственность
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('termination')">
+              <i class="fas fa-times-circle"></i> Прекращение доступа
+            </button>
+          </div>
+        </section>
+
+        <!-- Основные условия -->
+        <section class="terms-list">
+          <!-- Общие положения -->
+          <div id="general" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-globe"></i> 1. Общие положения</h2>
+              <span class="section-badge">Основное</span>
+            </div>
+
+            <div class="terms-content">
+              <div class="term-item">
+                <div class="term-number">1.1</div>
+                <div class="term-text">
+                  <p>
+                    Футбольный портал (далее — «Портал») представляет собой
+                    интернет-ресурс, предназначенный для общения футбольных
+                    болельщиков, обмена новостями, создания фан-клубов и
+                    обсуждения футбольных событий.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">1.2</div>
+                <div class="term-text">
+                  <p>Используя Портал, Вы подтверждаете, что:</p>
+                  <ul>
+                    <li>
+                      Вам есть 14 лет (для пользователей младше 14 лет
+                      необходимо согласие родителей)
+                    </li>
+                    <li>Вы ознакомились с данными Условиями и принимаете их</li>
+                    <li>
+                      Вы ознакомились с
+                      <a href="rules.html">Правилами портала</a> и обязуетесь их
+                      соблюдать
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">1.3</div>
+                <div class="term-text">
+                  <p>
+                    Администрация оставляет за собой право вносить изменения в
+                    Условия в любое время без предварительного уведомления.
+                    Продолжение использования Портала после изменений означает
+                    Ваше согласие с новой редакцией.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">1.4</div>
+                <div class="term-text">
+                  <p>
+                    Если Вы не согласны с каким-либо пунктом Условий, Вы обязаны
+                    прекратить использование Портала.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Условия использования аккаунта -->
+          <div id="account" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-user-circle"></i> 2. Аккаунт</h2>
+              <span class="section-badge">Регистрация</span>
+            </div>
+
+            <div class="terms-content">
+              <div class="term-item">
+                <div class="term-number">2.1</div>
+                <div class="term-text">
+                  <p>
+                    Для доступа к основным функциям Портала необходима
+                    регистрация. При регистрации Вы обязуетесь предоставить
+                    достоверную информацию.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">2.2</div>
+                <div class="term-text">
+                  <p>
+                    Вы несете полную ответственность за сохранность Ваших
+                    учетных данных (логина и пароля). Любые действия,
+                    совершенные с Вашего аккаунта, считаются совершенными Вами
+                    лично.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">2.3</div>
+                <div class="term-text">
+                  <p>Запрещено:</p>
+                  <ul>
+                    <li>Передавать доступ к аккаунту третьим лицам</li>
+                    <li>Использовать чужие аккаунты без разрешения</li>
+                    <li>
+                      Создавать несколько аккаунтов для обхода ограничений
+                    </li>
+                    <li>Использовать аккаунты с оскорбительными никнеймами</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">2.4</div>
+                <div class="term-text">
+                  <p>
+                    В случае утраты доступа к аккаунту Вы можете восстановить
+                    его через электронную почту, указанную при регистрации, или
+                    обратившись в
+                    <a href="support.html">техническую поддержку</a>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">2.5</div>
+                <div class="term-text">
+                  <p>
+                    Администрация имеет право заблокировать или удалить аккаунт
+                    без объяснения причин в случае нарушения Условий или Правил
+                    портала.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Пользовательский контент -->
+          <div id="content" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2>
+                <i class="fas fa-file-alt"></i> 3. Пользовательский контент
+              </h2>
+              <span class="section-badge">Контент</span>
+            </div>
+
+            <div class="terms-content">
+              <div class="term-item">
+                <div class="term-number">3.1</div>
+                <div class="term-text">
+                  <p>
+                    Под пользовательским контентом понимаются любые материалы,
+                    размещаемые Вами на Портале: тексты, изображения, ссылки,
+                    комментарии и т.д.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item highlight">
+                <div class="term-number">3.2</div>
+                <div class="term-text">
+                  <p>
+                    <strong>Важное условие:</strong> Размещая контент на
+                    Портале, Вы предоставляете Администрации неисключительное
+                    право на его использование, воспроизведение, модификацию и
+                    распространение в рамках функционирования Портала. Это право
+                    действует до момента удаления Вами контента.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">3.3</div>
+                <div class="term-text">
+                  <p>Вы гарантируете, что:</p>
+                  <ul>
+                    <li>
+                      Обладаете всеми необходимыми правами на размещаемый
+                      контент
+                    </li>
+                    <li>
+                      Контент не нарушает законодательство и права третьих лиц
+                    </li>
+                    <li>
+                      Контент соответствует
+                      <a href="rules.html">Правилам портала</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">3.4</div>
+                <div class="term-text">
+                  <p>
+                    Администрация имеет право удалять любой контент, нарушающий
+                    Условия или Правила, без предварительного уведомления.
+                  </p>
+                </div>
+              </div>
+
+              <div class="term-item">
+                <div class="term-number">3.5</div>
+                <div class="term-text">
+                  <p>
+                    Вы можете удалить свой контент в любое время. Однако,
+                    Администрация может сохранять резервные копии в течение
+                    технически необходимого срока.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Права и обязанности -->
+          <div id="rights" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2>
+                <i class="fas fa-copyright"></i> 4. Права и обязанности сторон
+              </h2>
+              <span class="section-badge">Взаимодействие</span>
+            </div>
+
+            <div class="rights-grid">
+              <div class="rights-card">
+                <div class="rights-header">
+                  <i class="fas fa-user-check"></i>
+                  <h3>Права Пользователя</h3>
+                </div>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i> Бесплатно использовать основные
+                    функции Портала
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Создавать и редактировать
+                    контент
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Общаться с другими
+                    пользователями
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Обращаться в техподдержку
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Удалить свой аккаунт в любое
+                    время
+                  </li>
+                </ul>
+              </div>
+
+              <div class="rights-card">
+                <div class="rights-header">
+                  <i class="fas fa-user-shield"></i>
+                  <h3>Обязанности Пользователя</h3>
+                </div>
+                <ul>
+                  <li>
+                    <i class="fas fa-exclamation"></i> Соблюдать Условия и
+                    Правила
+                  </li>
+                  <li>
+                    <i class="fas fa-exclamation"></i> Уважать других
+                    пользователей
+                  </li>
+                  <li>
+                    <i class="fas fa-exclamation"></i> Не нарушать
+                    законодательство
+                  </li>
+                  <li>
+                    <i class="fas fa-exclamation"></i> Не распространять
+                    вредоносное ПО
+                  </li>
+                  <li>
+                    <i class="fas fa-exclamation"></i> Не заниматься спамом
+                  </li>
+                </ul>
+              </div>
+
+              <div class="rights-card">
+                <div class="rights-header">
+                  <i class="fas fa-building"></i>
+                  <h3>Права Администрации</h3>
+                </div>
+                <ul>
+                  <li><i class="fas fa-check"></i> Модерировать контент</li>
+                  <li><i class="fas fa-check"></i> Блокировать нарушителей</li>
+                  <li>
+                    <i class="fas fa-check"></i> Изменять функционал Портала
+                  </li>
+                  <li><i class="fas fa-check"></i> Обновлять Условия</li>
+                  <li>
+                    <i class="fas fa-check"></i> Проводить технические работы
+                  </li>
+                </ul>
+              </div>
+
+              <div class="rights-card">
+                <div class="rights-header">
+                  <i class="fas fa-handshake"></i>
+                  <h3>Обязанности Администрации</h3>
+                </div>
+                <ul>
+                  <li>
+                    <i class="fas fa-check"></i> Обеспечивать работу Портала
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Защищать данные пользователей
+                  </li>
+                  <li><i class="fas fa-check"></i> Отвечать на обращения</li>
+                  <li>
+                    <i class="fas fa-check"></i> Уведомлять о важных изменениях
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Соблюдать конфиденциальность
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ответственность -->
+          <div id="liability" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-balance-scale"></i> 5. Ответственность</h2>
+              <span class="section-badge">Важно</span>
+            </div>
+
+            <div class="liability-cards">
+              <div class="liability-card">
+                <div class="liability-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="liability-content">
+                  <h3>5.1. Ограничение ответственности</h3>
+                  <p>
+                    Портал предоставляется «как есть». Администрация не
+                    гарантирует:
+                  </p>
+                  <ul>
+                    <li>Бесперебойную работу Портала</li>
+                    <li>Отсутствие ошибок и сбоев</li>
+                    <li>Сохранность контента при технических сбоях</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="liability-card">
+                <div class="liability-icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="liability-content">
+                  <h3>5.2. Ответственность Пользователя</h3>
+                  <p>Вы несете полную ответственность за:</p>
+                  <ul>
+                    <li>Свой контент и его последствия</li>
+                    <li>Свои действия на Портале</li>
+                    <li>Сохранность учетных данных</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="liability-card">
+                <div class="liability-icon">
+                  <i class="fas fa-external-link-alt"></i>
+                </div>
+                <div class="liability-content">
+                  <h3>5.3. Ссылки на сторонние ресурсы</h3>
+                  <p>
+                    Портал может содержать ссылки на сторонние сайты.
+                    Администрация не несет ответственности за их содержание и
+                    доступность.
+                  </p>
+                </div>
+              </div>
+
+              <div class="liability-card">
+                <div class="liability-icon">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="liability-content">
+                  <h3>5.4. Платные услуги</h3>
+                  <p>
+                    В настоящее время все услуги Портала предоставляются
+                    бесплатно. В случае введения платных функций, условия будут
+                    опубликованы дополнительно.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Прекращение доступа -->
+          <div id="termination" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2>
+                <i class="fas fa-times-circle"></i> 6. Прекращение доступа
+              </h2>
+              <span class="section-badge">Завершение</span>
+            </div>
+
+            <div class="termination-steps">
+              <div class="step-item" data-aos="fade-right">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                  <h3>Добровольное удаление</h3>
+                  <p>
+                    Вы можете в любое время удалить свой аккаунт в настройках
+                    профиля. После удаления Ваши личные данные будут удалены, но
+                    публичный контент (комментарии, посты) может остаться
+                    анонимизированным.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                  <h3>Блокировка за нарушения</h3>
+                  <p>
+                    Администрация имеет право заблокировать аккаунт за нарушение
+                    Условий или Правил. Блокировка может быть временной или
+                    постоянной в зависимости от тяжести нарушения.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                  <h3>Прекращение работы Портала</h3>
+                  <p>
+                    В случае прекращения работы Портала, Администрация обязуется
+                    уведомить пользователей не менее чем за 30 дней до
+                    планируемого закрытия.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="note-card" data-aos="fade-up">
+              <i class="fas fa-info-circle"></i>
+              <div class="note-content">
+                <h4>Важное примечание о блокировке</h4>
+                <p>
+                  При блокировке аккаунта за грубые нарушения, Администрация
+                  имеет право заблокировать также все связанные аккаунты
+                  (созданные с одного IP-адреса или использующие те же
+                  контактные данные) для предотвращения обхода блокировки.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Контактная информация -->
+          <div id="contact" class="terms-section" data-aos="fade-up">
+            <div class="section-header">
+              <h2><i class="fas fa-envelope"></i> 7. Контактная информация</h2>
+              <span class="section-badge">Связь</span>
+            </div>
+
+            <div class="contact-info">
+              <p>
+                По всем вопросам, связанным с использованием Портала, Вы можете
+                обращаться:
+              </p>
+
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <i class="fas fa-headset"></i>
+                  <div class="method-details">
+                    <h4>Техническая поддержка</h4>
+                    <a href="support.html">Создать обращение</a>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-envelope"></i>
+                  <div class="method-details">
+                    <h4>Email</h4>
+                    <a href="mailto:support@football-portal.ru"
+                      >support@football-portal.ru</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-phone-alt"></i>
+                  <div class="method-details">
+                    <h4>Телефон</h4>
+                    <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    <small>пн-пт, 10:00 - 19:00</small>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="method-details">
+                    <h4>Юридический адрес</h4>
+                    <p>г. Москва, ул. Футбольная, д. 1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Согласие с условиями -->
+          <section class="terms-agreement" data-aos="fade-up">
+            <div class="agreement-box">
+              <i class="fas fa-check-circle"></i>
+              <h3>Я принимаю условия использования</h3>
+              <p>
+                Продолжая использовать портал, вы подтверждаете, что прочитали и
+                принимаете все вышеуказанные условия.
+              </p>
+              <div class="agreement-actions">
+                <button class="btn-agree" onclick="acceptTerms()">
+                  <i class="fas fa-check"></i> Принимаю условия
+                </button>
+                <a href="index.html" class="btn-disagree">
+                  <i class="fas fa-times"></i> Вернуться на главную
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Кнопка "Наверх" -->
+        <button id="scrollTop" class="scroll-top" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </main>
+
+      <!-- ФУТЕР -->
+      <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Навигация</h3>
+            <li><a href="index.html" class="footer-link">🏠 Главная</a></li>
+            <li><a href="news.html" class="footer-link">📰 Новости</a></li>
+            <li><a href="clubs.html" class="footer-link">⚽ Клубы</a></li>
+          </div>
+          <div class="footer-section">
+            <h3>Помощь</h3>
+            <li>
+              <a href="support.html" class="footer-link"
+                >🆘 Техническая поддержка</a
+              >
+            </li>
+            <li><a href="faq.html" class="footer-link">❓ FAQ</a></li>
+            <li><a href="rules.html" class="footer-link">📋 Правила</a></li>
+            <li>
+              <a href="terms.html" class="footer-link"
+                >📄 Условия использования</a
+              >
+            </li>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <li>📧 support@football-portal.ru</li>
+            <li>📞 +7 (999) 123-45-67</li>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/terms.js"></script>
+  </body>
+</html>
