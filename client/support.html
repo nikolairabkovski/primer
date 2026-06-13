@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Техподдержка</title>
+    <link rel="stylesheet" href="css/support.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Техническая поддержка</h1>
+        <div class="nav-links">
+          <a href="index.html" class="btn">На главную</a>
+        </div>
+      </header>
+
+      <main>
+        <div class="support-container">
+          <!-- Форма создания обращения -->
+          <div class="create-ticket">
+            <h2>Создать обращение</h2>
+            <form id="ticketForm" onsubmit="createTicket(event)">
+              <div class="form-group">
+                <label for="subject">Тема</label>
+                <input
+                  type="text"
+                  id="subject"
+                  required
+                  placeholder="Кратко опишите проблему"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="priority">Приоритет</label>
+                <select id="priority">
+                  <option value="low">Низкий</option>
+                  <option value="medium" selected>Средний</option>
+                  <option value="high">Высокий</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  required
+                  placeholder="Подробно опишите вашу проблему..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="photos">Фотографии (до 5 шт.)</label>
+                <div class="file-input-wrapper">
+                  <input
+                    type="file"
+                    id="photos"
+                    accept="image/*"
+                    multiple
+                    onchange="updateFileNames(this)"
+                  />
+                  <label for="photos" class="file-label">
+                    Выбрать фотографии
+                  </label>
+                  <div id="file-names" class="file-names">
+                    <span class="file-name-placeholder">Файлы не выбраны</span>
+                  </div>
+                </div>
+                <small>Максимальный размер каждого файла 5MB</small>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                Отправить обращение
+              </button>
+            </form>
+          </div>
+
+          <!-- Список обращений пользователя -->
+          <div class="my-tickets">
+            <h2>Мои обращения</h2>
+            <div id="myTicketsList" class="tickets-list">
+              <div class="loading">Загрузка обращений...</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Модальное окно для просмотра обращения -->
+    <div id="ticketModal" class="modal">
+      <div class="modal-content ticket-modal">
+        <span class="close" onclick="closeTicketModal()">&times;</span>
+        <div id="ticketDetails"></div>
+      </div>
+    </div>
+
+    <script src="js/support.js"></script>
+  </body>
+</html>
