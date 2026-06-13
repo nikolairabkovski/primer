@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чат</title>
+    <link rel="stylesheet" href="css/chat.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Чат</h1>
+        <div class="nav-links">
+          <a href="friends.html" class="btn">Назад к друзьям</a>
+        </div>
+      </header>
+
+      <main>
+        <div class="chat-container">
+          <!-- Шапка чата с информацией о пользователе -->
+          <div id="chatHeader" class="chat-header">
+            <div class="chat-user-info">
+              <div class="chat-user-avatar">👤</div>
+              <div class="chat-user-details">
+                <h2>Загрузка...</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Область сообщений -->
+          <div id="messagesContainer" class="messages-container">
+            <div class="loading-messages">Загрузка сообщений...</div>
+          </div>
+
+          <!-- Форма отправки сообщения -->
+          <div class="message-form">
+            <textarea
+              id="messageInput"
+              placeholder="Введите сообщение..."
+              rows="2"
+            ></textarea>
+
+            <div class="message-actions">
+              <!-- Скрытый input для выбора фото -->
+              <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                style="display: none"
+              />
+
+              <!-- Кнопка выбора фото -->
+              <button
+                type="button"
+                onclick="document.getElementById('photoInput').click()"
+                class="btn-photo"
+                title="Выбрать фото"
+              >
+                📷
+              </button>
+
+              <!-- Кнопка отправки фото (появляется после выбора файла) -->
+              <button
+                type="button"
+                id="sendPhotoBtn"
+                onclick="sendPhoto()"
+                class="btn-send-photo"
+                style="display: none"
+              >
+                Отправить фото
+              </button>
+
+              <!-- Кнопка отправки текста -->
+              <button type="button" onclick="sendMessage()" class="btn-send">
+                Отправить
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/chat.js"></script>
+  </body>
+</html>
